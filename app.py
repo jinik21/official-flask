@@ -2,10 +2,13 @@ from flask import Flask, render_template,request, url_for
 
 
 app = Flask(__name__)
-
-
+ads="admin"
+passwordc="hello"
 @app.route('/')
 def home():
+    return render_template('index.html')
+@app.route('/home')
+def homee():
     return render_template('index.html')
 
 
@@ -35,3 +38,23 @@ def iot():
 @app.route('/apis')
 def apis():
     return render_template('APIs.html')
+
+@app.route('/login',methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        admin=request.form.get("admin")
+        password=request.form.get("passwor")
+        if((admin==ads)and(password==passwordc)):
+            return render_template('article.html')
+
+        
+    return render_template('login.html')
+
+@app.route('/articleadd',methods=['POST'])
+def articleadd():
+    articletext=request.form.get("articl")
+    return render_template('articleadd.html',txt=articletext)
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
