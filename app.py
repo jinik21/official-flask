@@ -52,8 +52,10 @@ def login():
 
 @app.route('/articleadd',methods=['POST'])
 def articleadd():
-    articletext=request.form.get("articl")
-    return render_template('articleadd.html',txt=articletext)
+    headline=request.form.get("headline")
+    intro=request.form.get("intro")
+    techstack=request.form.get("techstack")
+    return render_template('articleadd.html',headline=headline,intro=intro,techstack=techstack)
 
 
 if __name__ == "__main__":

@@ -234,7 +234,13 @@
     <main class="page-wrap page-wrap-home" id="maincontent">
         <form  method="POST" class="inp" action="{{url_for('articleadd')}}" method="POST">
             <label for="article">Enter Article</label><br>
-            <textarea  cols="50" rows="8" autofocus placeholder="Enter Article" type="text" name="articl"></textarea>
+            <label for="headline">Heading</label>
+            <input type="text" id="headline" name="headline" ><br>
+            <textarea  cols="50" rows="8" autofocus placeholder="Enter Intro" type="text" name="intro"></textarea>
+            <label for="techstack">TechStack</label>
+            
+            <textarea  cols="50" rows="8" autofocus placeholder="Enter TechStack" type="text" name="techstack"></textarea>
+            
             <button class="btn btn-primary">Submit</button>
         </form>
 </main>
