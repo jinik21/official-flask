@@ -231,13 +231,19 @@
       </button>
     </div>
   </header>
-  <div class="all-site-wrap" id="all-site-wrap" >
+  <div class="all-site-wrap" id="all-site-wrap" style="color:red;">
     <main class="page-wrap page-wrap-home" id="maincontent">
-        <form  method="POST" class="inp" action="{{url_for('articleadd')}}" method="POST">
+        <form class='upldform' enctype=multipart/form-data method="POST"  action="{{url_for('addarticle')}}" method="POST">
             <label for="article">Enter Article</label><br>
             <label for="headline">Heading</label>
             <input type="text" id="headline" name="headline" ><br>
-            <textarea  cols="50" rows="8" autofocus placeholder="Enter Intro" type="text" name="intro" id="articl" style="background-color: black;color:#fff;" ></textarea>
+            <label for="file">Select a file:</label><br><br>
+            <input type="file" id="img1" name="img1" ><br><br>
+            <textarea  cols="50" rows="8" autofocus placeholder="Enter Intro" type="text" name="intro" id="articleintro"  ></textarea>
+            <label for="text_after_image">TEXT AFTER IMAGE</label>
+            <textarea  cols="50" rows="8" autofocus placeholder="Enter Intro" type="text" name="afterimg" id="afterimg"  ></textarea>
+            <label for="files">Select a file:</label><br><br>
+            <input type="file" id="img2" name="img2" ><br><br>
             
             <button class="btn btn-primary">Submit</button>
         </form>
@@ -616,14 +622,14 @@ window.activeMember = false;
     data-cf-settings="31c87435a4377bec6ac27922-|49" defer=""></script>
           <script>
     ClassicEditor
-        .create( document.querySelector( '#articl' ) )
+        .create( document.querySelector( '#articleintro' ) )
         .catch( error => {
             console.error( error );
         } );
     </script>
               <script>
     ClassicEditor
-        .create( document.querySelector( '#artic' ) )
+        .create( document.querySelector( '#afterimg' ) )
         .catch( error => {
             console.error( error );
         } );

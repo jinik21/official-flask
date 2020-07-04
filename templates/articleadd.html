@@ -230,11 +230,14 @@
       </button>
     </div>
   </header>
-  <div class="all-site-wrap" id="all-site-wrap" action="{{url_for('articleadd')}}" method="POST">
+  <div class="all-site-wrap" id="all-site-wrap" >
     <main class="page-wrap page-wrap-home" id="maincontent">
        <h1>Successfully Added</h1>
        <h1>{{ headline }}</h1>
+       <img src={{loc1}} height="500px" alt='IMAGE1'>
        {{ intro|safe }}
+       <img src={{loc2}} height="500px" alt='IMAGE2'>
+       {{ afterimg|safe }}
        
 </main>
 </div>
