@@ -1,7 +1,28 @@
 from flask import Flask, render_template,request, url_for
-
+from flask_sqlalchemy import SQLAlchemy
+import psycopg2
+from sqlalchemy.orm.attributes import flag_modified
 
 app = Flask(__name__)
+app.secret_key="12345678"
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=False
+app.config['SQLALCHEMY_DATABASE_URI']='postgresql://nik:password@localhost/datatest'#dburi
+db=SQLAlchemy(app)
+articles=db.Table('articles',db.metadata,autoload=True,autoload_with=db.engine,extend_existing=True)
+
+class articles(db.Model):
+    _tablename_='articles'
+    __table_args__ = {'extend_existing': True} 
+    id=db.Column('id',db.Integer,primary_key=True)
+    headline=db.Column('headline',db.Text)
+    intro=db.Column('intro',db.Text)
+    #entries=db.Column('entries',db.Integer)
+    def _init_(self,id,headline,intro):
+        self.id=id
+        self.headline=headline
+        self.intro=intro
+
+
 ads="admin"
 passwordc="hello"
 @app.route('/')
@@ -54,7 +75,10 @@ def login():
 def articleadd():
     headline=request.form.get("headline")
     intro=request.form.get("intro")
-    print(intro)
+    article=articles(headline=headline,intro=intro)
+    db.session.add(article)
+    db.session.commit()
+    #print(intro)
     return render_template('articleadd.html',headline=headline,intro=intro)
 
 
