@@ -234,9 +234,9 @@
     <main class="page-wrap page-wrap-home" id="maincontent">
        <h1>Successfully Added</h1>
        <h1>{{ headline }}</h1>
-       <p>{{intro}}</p>
+       {{ intro|safe }}
        <h2>TechStack</h2>
-       <p>{{techstack}}</p>
+       {{ techstack|safe }}
 </main>
 </div>
 </div>
