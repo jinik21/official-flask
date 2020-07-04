@@ -54,8 +54,8 @@ def login():
 def articleadd():
     headline=request.form.get("headline")
     intro=request.form.get("intro")
-    techstack=request.form.get("techstack")
-    return render_template('articleadd.html',headline=headline,intro=intro,techstack=techstack)
+    print(intro)
+    return render_template('articleadd.html',headline=headline,intro=intro)
 
 
 if __name__ == "__main__":
