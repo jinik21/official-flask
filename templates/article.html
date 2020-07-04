@@ -28,6 +28,7 @@
   <link rel="preconnect" href="https://static.codepen.io/">
   <link rel="dns-prefetch" href="https://static.codepen.io/">
   <script type="31c87435a4377bec6ac27922-text/javascript">window._wca = window._wca || [];</script>
+  <script src="https://cdn.ckeditor.com/ckeditor5/19.0.0/classic/ckeditor.js"></script>
 
   <meta name="description"
     content="Daily articles about CSS, HTML, JavaScript, and all things related to web design and development." />
@@ -236,10 +237,10 @@
             <label for="article">Enter Article</label><br>
             <label for="headline">Heading</label>
             <input type="text" id="headline" name="headline" ><br>
-            <textarea  cols="50" rows="8" autofocus placeholder="Enter Intro" type="text" name="intro"></textarea>
+            <textarea  cols="50" rows="8" autofocus placeholder="Enter Intro" type="text" name="intro" id="articl"></textarea>
             <label for="techstack">TechStack</label>
             
-            <textarea  cols="50" rows="8" autofocus placeholder="Enter TechStack" type="text" name="techstack"></textarea>
+            <textarea  cols="50" rows="8" autofocus placeholder="Enter TechStack" type="text" name="techstack" id="artic"></textarea>
             
             <button class="btn btn-primary">Submit</button>
         </form>
@@ -616,6 +617,20 @@ window.activeMember = false;
     integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
   <script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js"
     data-cf-settings="31c87435a4377bec6ac27922-|49" defer=""></script>
+          <script>
+    ClassicEditor
+        .create( document.querySelector( '#articl' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+    </script>
+              <script>
+    ClassicEditor
+        .create( document.querySelector( '#artic' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+    </script>
 </body>
 
 <!-- Mirrored from css-tricks.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2020 10:41:03 GMT -->
