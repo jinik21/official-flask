@@ -9,15 +9,13 @@ ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif','doc'}
 app = Flask(__name__)
 app.secret_key="12345678"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=False
-app.config['SQLALCHEMY_DATABASE_URI']='postgresql://nik:password@localhost/datatest'#dburi
+app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///db.sqlite3'#DBURI
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 db=SQLAlchemy(app)
-articles=db.Table('articles',db.metadata,autoload=True,autoload_with=db.engine,extend_existing=True)
+#articles=db.Table('articles',db.metadata,autoload=True,autoload_with=db.engine,extend_existing=True)
 
 class articles(db.Model):
-    _tablename_='articles'
-    __table_args__ = {'extend_existing': True} 
     id=db.Column('id',db.Integer,primary_key=True)
     headline=db.Column('headline',db.Text)
     intro=db.Column('intro',db.Text)
