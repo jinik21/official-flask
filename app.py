@@ -24,7 +24,8 @@ class articles(db.Model):
     afterimg=db.Column('afterimg',db.Text)
     cardtext=db.Column('cardtext',db.Text)
     field=db.Column('field',db.Text)
-    def _init_(self,id,headline,intro,loc1,loc2,afterimg,cardtext,field):
+    level=db.Column('level',db.Text)
+    def _init_(self,id,headline,intro,loc1,loc2,afterimg,cardtext,field,level):
         self.id=id
         self.headline=headline
         self.intro=intro
@@ -33,6 +34,7 @@ class articles(db.Model):
         self.afterimg=afterimg
         self.cardtext=cardtext
         self.field=field
+        self.level=level
 
 def allowed_file(filename):
     return '.' in filename and \
@@ -119,7 +121,8 @@ def addarticle():
         afterimg=request.form.get("afterimg")
         cardtext=request.form.get("cardtext")
         field=request.form.get("field")
-        article=articles(headline=headline,intro=intro,loc1=loc1,loc2=loc2,afterimg=afterimg,cardtext=cardtext,field=field)
+        level=request.form.get("level")
+        article=articles(headline=headline,intro=intro,loc1=loc1,loc2=loc2,afterimg=afterimg,cardtext=cardtext,field=field,level=level)
         db.session.add(article)
         db.session.commit()
         #print(intro)
