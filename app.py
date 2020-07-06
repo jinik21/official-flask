@@ -22,14 +22,17 @@ class articles(db.Model):
     loc1=db.Column('loc1',db.Text)
     loc2=db.Column('loc2',db.Text)
     afterimg=db.Column('afterimg',db.Text)
-    #entries=db.Column('entries',db.Integer)
-    def _init_(self,id,headline,intro,loc1,loc2,afterimg):
+    cardtext=db.Column('cardtext',db.Text)
+    field=db.Column('field',db.Text)
+    def _init_(self,id,headline,intro,loc1,loc2,afterimg,cardtext,field):
         self.id=id
         self.headline=headline
         self.intro=intro
         self.loc1=loc1
         self.loc2=loc2
         self.afterimg=afterimg
+        self.cardtext=cardtext
+        self.field=field
 
 def allowed_file(filename):
     return '.' in filename and \
@@ -114,7 +117,9 @@ def addarticle():
         headline=request.form.get("headline")
         intro=request.form.get("intro")
         afterimg=request.form.get("afterimg")
-        article=articles(headline=headline,intro=intro,loc1=loc1,loc2=loc2,afterimg=afterimg)
+        cardtext=request.form.get("cardtext")
+        field=request.form.get("field")
+        article=articles(headline=headline,intro=intro,loc1=loc1,loc2=loc2,afterimg=afterimg,cardtext=cardtext,field=field)
         db.session.add(article)
         db.session.commit()
         #print(intro)
