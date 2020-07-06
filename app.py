@@ -125,7 +125,6 @@ def addarticle():
         article=articles(headline=headline,intro=intro,loc1=loc1,loc2=loc2,afterimg=afterimg,cardtext=cardtext,field=field,level=level)
         db.session.add(article)
         db.session.commit()
-        #print(intro)
     return render_template('articleadd.html',headline=headline,intro=intro,loc1=loc1,loc2=loc2,afterimg=afterimg)
 
 
