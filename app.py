@@ -16,7 +16,7 @@ db=SQLAlchemy(app)
 #articles=db.Table('articles',db.metadata,autoload=True,autoload_with=db.engine,extend_existing=True)
 
 class articles(db.Model):
-    id=db.Column('id',db.Integer,primary_key=True)
+    ID=db.Column('ID',db.Integer,primary_key=True, autoincrement=True)
     headline=db.Column('headline',db.Text)
     intro=db.Column('intro',db.Text)
     loc1=db.Column('loc1',db.Text)
@@ -25,8 +25,8 @@ class articles(db.Model):
     cardtext=db.Column('cardtext',db.Text)
     field=db.Column('field',db.Text)
     level=db.Column('level',db.Text)
-    def _init_(self,id,headline,intro,loc1,loc2,afterimg,cardtext,field,level):
-        self.id=id
+    def _init_(self,ID,headline,intro,loc1,loc2,afterimg,cardtext,field,level):
+        self.ID=ID
         self.headline=headline
         self.intro=intro
         self.loc1=loc1
@@ -35,6 +35,7 @@ class articles(db.Model):
         self.cardtext=cardtext
         self.field=field
         self.level=level
+     
 
 def allowed_file(filename):
     return '.' in filename and \
@@ -44,6 +45,9 @@ passwordc="hello"
 @app.route('/')
 def home():
     return render_template('index.html')
+
+
+
 @app.route('/home')
 def homee():
     return render_template('index.html')
@@ -51,25 +55,30 @@ def homee():
 
 @app.route('/blockchain')
 def blockchain():
-    return render_template('blockchain.html')
+    article = articles.query.filter_by(field="blockchain")
+    return render_template('blockchain.html', articles = article)
 
 @app.route('/webdev')
 def webdev():
-    return render_template('webdev.html')
+    article = articles.query.filter_by(field="webdev")
+    return render_template('webdev.html', articles = article)
 
 
 @app.route('/appdev')
 def appdev():
-    return render_template('appdev.html')
+    article = articles.query.filter_by(field="appdev")
+    return render_template('appdev.html', articles = article)
 
 @app.route('/aiml')
 def aiml():
-    return render_template('aiml.html')
+    article = articles.query.filter_by(field="aiml")
+    return render_template('aimln.html', articles = article)
 
 
 @app.route('/iot')
 def iot():
-    return render_template('iot.html')
+    article = articles.query.filter_by(field="iot")
+    return render_template('iot.html', articles = article)
 
 
 @app.route('/apis')
@@ -125,8 +134,14 @@ def addarticle():
         article=articles(headline=headline,intro=intro,loc1=loc1,loc2=loc2,afterimg=afterimg,cardtext=cardtext,field=field,level=level)
         db.session.add(article)
         db.session.commit()
+        #print(intro)
     return render_template('articleadd.html',headline=headline,intro=intro,loc1=loc1,loc2=loc2,afterimg=afterimg)
 
+
+@app.route("/<int:ID>")
+def post(ID):
+    article = articles.query.get_or_404(ID)
+    return render_template("editarticle.html", ID=article.ID, headline=article.headline, intro=article.intro, img1=article.loc1, img2=article.loc2)
 
 if __name__ == "__main__":
     app.run(debug=True)

@@ -17,8 +17,8 @@
   <meta name="monetization" content="$ilp.uphold.com/biyqg2MkQKbe">
   <link rel="search" type="application/opensearchdescription+xml" href="opensearch.xml" title="CSS-Tricks Search">
   <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="feed/index.html">
-  <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/610186/6122012/css/fonts.css" />
-  <link rel="stylesheet" href="static/wp-content/themes/CSS-Tricks-17/style6639.css?cache_bust=1592001959223">
+<!--   <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/610186/6122012/css/fonts.css" /> -->
+<link rel="stylesheet" href="static/wp-content/themes/CSS-Tricks-17/style6639.css?cache_bust=1592001959223">
   <link rel="preconnect" href="https://s3.buysellads.com/">
   <link rel="dns-prefetch" href="https://s3.buysellads.com/">
   <link rel="preconnect" href="https://srv.buysellads.com/">
@@ -27,6 +27,9 @@
   <link rel="dns-prefetch" href="https://res.cloudinary.com/">
   <link rel="preconnect" href="https://static.codepen.io/">
   <link rel="dns-prefetch" href="https://static.codepen.io/">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css">
+
+
   <script type="31c87435a4377bec6ac27922-text/javascript">window._wca = window._wca || [];</script>
 
   <meta name="description"
@@ -49,7 +52,7 @@
 
   <link rel='dns-prefetch' href='http://stats.wp.com/' />
   <link rel='stylesheet' id='wc-block-style-css'
-    href='static/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/style60a8.css?ver=2.5.16' type='text/css'
+    href="{{url_for('static', filename = 'wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/style60a8.css?ver=2.5.16')}}" type='text/css'
     media='all' />
   <style id='woocommerce-inline-inline-css' type='text/css'>
     .woocommerce form .form-row .required {
@@ -57,14 +60,13 @@
     }
   </style>
   <link rel='stylesheet' id='wc-memberships-frontend-css'
-    href='static/wp-content/plugins/woocommerce-memberships/assets/css/frontend/wc-memberships-frontend.min89ac.css?ver=1.17.5'
+    href="{{url_for('static', filename = 'wp-content/plugins/woocommerce-memberships/assets/css/frontend/wc-memberships-frontend.min89ac.css?ver=1.17.5')}}"
     type='text/css' media='all' />
   <link rel='stylesheet' id='jetpack-instant-search-css'
-    href='static/wp-content/plugins/jetpack/_inc/build/instant-search/instant-search.min9b80.css?ver=8.6.1' type='text/css'
+    href='url_for("static", filename = "wp-content/plugins/jetpack/_inc/build/instant-search/instant-search.min9b80.css?ver=8.6.1")}}' type='text/css'
     media='all' />
-  <script async defer src='static/wp-content/plugins/jetpack/https_/stats.wp.com/s-202025.html'
-    type="31c87435a4377bec6ac27922-text/javascript"></script>
-  <link rel='https://api.w.org/' href='wp-json/index.html' />
+<!--   <script async defer src='wp-content/plugins/jetpack/https_/stats.wp.com/s-202025.html' type="31c87435a4377bec6ac27922-text/javascript"></script> -->
+  <link rel='https://api.w.org/' href='static/wp-json/index.html' />
 
   <meta name="generator" content="Site Kit by Google 1.9.0" />
   <style type="text/css" media="all">
@@ -91,10 +93,10 @@
     }
   </style>
   <script type="31c87435a4377bec6ac27922-text/javascript">
-				document.documentElement.classList.add(
-					'jetpack-lazy-images-js-enabled'
-				);
-			</script>
+        document.documentElement.classList.add(
+          'jetpack-lazy-images-js-enabled'
+        );
+      </script>
 </head>
 
 <body class="home blog theme-CSS-Tricks-17 woocommerce-no-js" id="top">
@@ -244,250 +246,49 @@
             z-index: -1;
             background-image:
               radial-gradient(ellipse closest-side, rgba(15, 14, 22, 0.75), #100e17),
-              url(static/img/iot/background.png);
+              url();
             background-size: cover;
             background-repeat: no-repeat;
             opacity: 0.75;
           }
+
+          .blue{
+            color: blue;
+          }
+          .yellow{
+            color: yellow;
+          }
+          .purple{
+            color: purple;
+          }
+          .green{
+            color: green
+          }
+
+
+
         </style>
         <div class="hero-article-article">
           
           <h1>
            
-              IOT (INTERNET OF THINGS) 
+              {{ headline|safe }}
           </h1>
-          
-          <div class="article-content">
-            <p>The Internet of Things, or IoT, refers to the billions of physical devices around the world that are now connected to the internet, all collecting and sharing data. Thanks to the arrival of super-cheap computer chips and the ubiquity of wireless networks, it's possible to turn anything, from something as small as a pill to something as big as an aeroplane, into a part of the IoT. </p>
-              <p>Connecting up all these different objects and adding sensors to them adds a level of digital intelligence to devices that would be otherwise dumb, enabling them to communicate real-time data without involving a human being. The Internet of Things is making the fabric of the world around us more smarter and more responsive, merging the digital and physical universes.</p>
-            
-          </div>
-          
+
+          <br>
+          <br>
+
+          <img src="{{img1}}" alt="">
+          <br>
+         {{  intro|safe }}
+         <br>
+         <img src="{{img2}}" alt="">
         <div class="hero-article-ad" id="hero-article-ad">
         </div>
       </article>
   </div>
   <div class="page-wrap page-wrap-guides page-wrap-max-width">
 <main class="page-wrap-max-width">
-<div class="guide-grid">
-<!-- <article class="guide-card" id="post-21059">
-
-<img class="guide-card-img" src="static/img/iot/mirror.jpeg" alt="">
-
-<div class="guide-card-article">
-<h2>
-<a href="https://github.com/ProjectifyOfficial/WizardMirror
-">
-Wizard Mirror</a>
-</h2>
-<div class="guide-time">
-<span class="date-prefix">
-Advanced
-</span>
-<time datetime="">
- </time>
-</div>
-<div class="article-content">
-Wizard Mirror is an open-source Electronjs app, that can give a regular mirror mysterious powers with the help of a Raspberry Pi! </div>
-
-</div>
-</article>
-<article class="guide-card" id="post-7667">
-
-<img class="guide-card-img" src="static/img/iot/dustbin.jpeg" alt="">
-
-<div class="guide-card-article">
-<h2>
-<a href="https://github.com/ProjectifyOfficial/Smart-Dustbin">
-Smart Dustbin </a>
-</h2>
-<div class="guide-time">
-<span class="date-prefix">
-Beginner
-</span>
-<time datetime="">
- </time>
-</div>
-<div class="article-content">
-Proposed System provide an IT based solution to garbage collection providing greater accessibility, planning appropriately fordisposing process and at the same time enabling collection of garbage generation data. </div>
-
-</div>
-</article>
-<article class="guide-card" id="post-177225">
-<a href="https://css-tricks.com/snippets/css/complete-guide-grid/">
-<img class="guide-card-img" src="static/img/iot/irrigation.jpeg" alt="">
-</a>
-<div class="guide-card-article">
-<h2>
-<a href="https://github.com/ProjectifyOfficial/Smart-Irrigation-System">
-Smart Irrigation System </a>
-</h2>
-<div class="guide-time">
-<span class="date-prefix">
-Beginner
-</span>
-<time datetime="">
- </time>
-</div>
-<div class="article-content">
-<p>The project describes smart irrigation system using the concepts of Internet of Things. The system consists of an arduino which is the microcontroller and controls a 5V semi- submersible water pump according to the water level in the soil</p>
-
-</div>
-</article>
-<article class="guide-card" id="post-150162">
-<a href="https://css-tricks.com/complete-guide-table-element/">
-<img class="guide-card-img" src="static/img/iot/gate.jpeg" alt="">
-</a>
-<div class="guide-card-article">
-<h2>
-<a href="https://github.com/ProjectifyOfficial/automatic-gate-opener-rpy">
-Automatic Gate Opener </a>
-</h2>
-<div class="guide-time">
-<span class="date-prefix">
-Intermediate
-</span>
-<time datetime="">
- </time>
-</div>
-<div class="article-content">
-<p>Automatic Gate Opener rpy is a Raspberry Pi solution to control an automatic gate by a mobile phone using a broken automatic gate controller.</p>
-
-</div>
-</article>
-<article class="guide-card" id="post-181375">
-<a href="https://css-tricks.com/centering-css-complete-guide/">
-<img class="guide-card-img" src="static/img/iot/weather.jpeg" alt="">
-</a>
-<div class="guide-card-article">
-<h2>
-<a href="https://github.com/ProjectifyOfficial/Weatherstation">
-Weather Station </a>
-</h2>
-<div class="guide-time">
-<span class="date-prefix">
-Intermediate
-</span>
-<time datetime="">
-</time>
-</div>
-<div class="article-content">
-<p>The purpose of this Weather Station is to provide real time weather information to the user on demand. The weather station consists of Sensors capable of reading temperature, pressure, humidity, etc. These details are sent to a SQL Server that is hosted in a remote location. </p>
-
-</div>
-</article>
-<article class="guide-card" id="post-199370">
-<a href="https://css-tricks.com/a-complete-guide-to-svg-fallbacks/">
-<img class="guide-card-img" src="static/img/iot/home.jpeg" alt="">
-</a>
-<div class="guide-card-article">
-<h2>
-<a href="https://github.com/ProjectifyOfficial/home_assistant">
-Home Assistant </a>
-</h2>
-<div class="guide-time">
-<span class="date-prefix">
-Advanced
-</span>
-<time datetime="">
-</time>
-</div>
-<div class="article-content">
-<p>You shouldn't have to work the room, the room should work you. True home automation is having your home anticipate what you want without needing any input from you.</p> </div>
-
-</div>
-</article>
-<article class="guide-card" id="post-245208">
-<a href="https://css-tricks.com/nerds-guide-color-web/">
-<img class="guide-card-img" src="static/img/iot/patient.jpeg" alt="">
-</a>
-<div class="guide-card-article">
-<h2>
-<a href="https://github.com/ProjectifyOfficial/Patient-Monitoring-System">
-Patient-Monitoring-System </a>
-</h2>
-<div class="guide-time">
-<span class="date-prefix">
-Advanced
-</span>
-<time datetime="">
- </time>
-</div>
-<div class="article-content">
-<p>This Project is about to Monitor Patient using arduino and to display the result at website anywhere. Scope: VB, PHP, Arduino, MYSQL, Webhosting</p> </div>
-
-</div>
-</article>
-<article class="guide-card" id="post-302917">
-<a href="https://css-tricks.com/a-complete-guide-to-data-attributes/">
-<img class="guide-card-img" src="static/img/iot/door.jpeg" alt="">
-</a>
-<div class="guide-card-article">
-<h2>
-<a href="https://github.com/ProjectifyOfficial/Door-lock-unlock-via-telegram">
-Door-lock-unlock via Telegram </a>
-</h2>
-<div class="guide-time">
-<span class="date-prefix">
-Beginner
-</span>
-<time datetime="">
- </time>
-</div>
-<div class="article-content">
-<p> Rasberry-pi based home survellience and door-lock-unlock via telegram.</p> </div>
-
-</div>
-</article>
-<article class="guide-card" id="post-307668">
-<a href="https://css-tricks.com/complete-guide-to-css-functions/">
-<img class="guide-card-img" src="static/img/iot/attendance.jpeg" alt="">
-</a>
-<div class="guide-card-article">
-<h2>
-<a href="https://github.com/ProjectifyOfficial/Tez-Attendance">
-Biometric Attendance System </a>
-</h2>
-<div class="guide-time">
-<span class="date-prefix">
-Intermediate
-</span>
-<time datetime="">
- </time>
-</div>
-<div class="article-content">
-<p>An IoT attendance system that scans the student's fingerprint to mark him present. A Firebase Database stores the attendance.</p> </div>
-
-</div>
-</article> -->
-
- {% for artic in articles %}
-<article class="guide-card" id="post-307668">
-<a href="{{ url_for('post', ID=artic.ID) }}">
-<img class="guide-card-img" src="{{artic.loc1}}" alt="">
-</a>
-<div class="guide-card-article">
-<h2>
-<a href="{{ url_for('post', ID=artic.ID) }}">
-{{ artic.headline }}</a>
-</h2>
-<div class="guide-time">
-<span class="date-prefix">
-{{ artic.level }}
-</span>
-<time datetime="">
- </time>
-</div>
-<div class="article-content">
-<p>{{ artic.cardtext }}</p> </div>
-
-</div>
-</article>
-{% endfor %}
-
-
-
-
 
 </main>
 </div>
@@ -798,11 +599,14 @@ Intermediate
       </div>
     </div>
   </div>
+
+<!--   <script>hljs.initHighlightingOnLoad();</script> -->
+
   <script type="31c87435a4377bec6ac27922-text/javascript">
-		var c = document.body.className;
-		c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
-		document.body.className = c;
-	</script>
+    var c = document.body.className;
+    c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
+    document.body.className = c;
+  </script>
   <script src='wp-content/plugins/jetpack/_inc/build/photon/photon.min1c52.js?ver=20191001'
     type="31c87435a4377bec6ac27922-text/javascript"></script>
   <script src='wp-content/themes/CSS-Tricks-17/js/min/jquery-3.4.1.min.js'
@@ -835,9 +639,9 @@ var JetpackInstantSearchOptions=JSON.parse(decodeURIComponent("%7B%22overlayOpti
   <script type="31c87435a4377bec6ac27922-text/javascript" src='https://stats.wp.com/e-202025.js' async='async'
     defer='defer'></script>
   <script type="31c87435a4377bec6ac27922-text/javascript">
-	_stq = window._stq || [];
-	_stq.push([ 'view', {v:'ext',j:'1:8.6.1',blog:'45537868',post:'0',tz:'-7',srv:'css-tricks.com'} ]);
-	_stq.push([ 'clickTrackerInit', '45537868', '0' ]);
+  _stq = window._stq || [];
+  _stq.push([ 'view', {v:'ext',j:'1:8.6.1',blog:'45537868',post:'0',tz:'-7',srv:'css-tricks.com'} ]);
+  _stq.push([ 'clickTrackerInit', '45537868', '0' ]);
 </script>
   <script type="31c87435a4377bec6ac27922-text/javascript">
 window.activeMember = false;
@@ -870,6 +674,7 @@ window.activeMember = false;
     integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
   <script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js"
     data-cf-settings="31c87435a4377bec6ac27922-|49" defer=""></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
 </body>
 
 <!-- Mirrored from css-tricks.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2020 10:41:03 GMT -->

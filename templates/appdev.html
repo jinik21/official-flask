@@ -267,7 +267,7 @@
   <div class="page-wrap page-wrap-guides page-wrap-max-width">
 <main class="page-wrap-max-width">
 <div class="guide-grid">
-<article class="guide-card" id="post-21059">
+<!-- <article class="guide-card" id="post-21059">
 
 <img class="guide-card-img" src="static/img/appdev/moviebank.jpeg" alt="">
 
@@ -454,7 +454,36 @@ Intermediate
 <div class="article-content">
 <p>Android implementation of INSTAGRAM with Material Design concept.It uses some popular tools and libraries used for Android development. </p> </div>
 </div>
+</article> -->
+
+ {% for artic in articles %}
+<article class="guide-card" id="post-307668">
+<a href="{{ url_for('post', ID=artic.ID) }}">
+<img class="guide-card-img" src="{{artic.loc1}}" alt="">
+</a>
+<div class="guide-card-article">
+<h2>
+<a href="{{ url_for('post', ID=artic.ID) }}">
+{{ artic.headline }}</a>
+</h2>
+<div class="guide-time">
+<span class="date-prefix">
+{{ artic.level }}
+</span>
+<time datetime="">
+ </time>
+</div>
+<div class="article-content">
+<p>{{ artic.cardtext }}</p> </div>
+
+</div>
 </article>
+{% endfor %}
+
+
+
+
+
 
 </main>
 </div>

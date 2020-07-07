@@ -270,7 +270,7 @@
   <div class="page-wrap page-wrap-guides page-wrap-max-width">
 <main class="page-wrap-max-width">
 <div class="guide-grid">
-<article class="guide-card" id="post-21059">
+<!-- <article class="guide-card" id="post-21059">
 
 <img class="guide-card-img" src="static/img/webdev/instaclone.jpeg" alt="">
 
@@ -455,7 +455,34 @@ Intermediate
 <div class="article-content">
 <p>Maps are a great way to leverage your website to drive traffic to your doors. A majority of maps simply show the locations of a given entity as well as an address without any further context or interactivity. In our example, we've designed a map that displays locations you can learn more about by clicking on the location. Clicking on the location triggers a popup with further information related to that specific location. You can add any information you'd like to these popups that make the most sense for your business.</p> </div>
 </div>
+</article> -->
+
+
+
+ {% for artic in articles %}
+<article class="guide-card" id="post-307668">
+<a href="{{ url_for('post', ID=artic.ID) }}">
+<img class="guide-card-img" src="{{artic.loc1}}" alt="">
+</a>
+<div class="guide-card-article">
+<h2>
+<a href="{{ url_for('post', ID=artic.ID) }}">
+{{ artic.headline }}</a>
+</h2>
+<div class="guide-time">
+<span class="date-prefix">
+{{ artic.level }}
+</span>
+<time datetime="">
+ </time>
+</div>
+<div class="article-content">
+<p>{{ artic.cardtext }}</p> </div>
+
+</div>
 </article>
+{% endfor %}
+
 
 </main>
 </div>
