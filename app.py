@@ -141,7 +141,7 @@ def addarticle():
 @app.route("/<int:ID>")
 def post(ID):
     article = articles.query.get_or_404(ID)
-    return render_template("editarticle.html", ID=article.ID, headline=article.headline, intro=article.intro, img1=article.loc1, img2=article.loc2)
+    return render_template("editarticle.html", ID=article.ID, headline=article.headline, intro=article.intro, img1=article.loc1, img2=article.loc2,afterimg=article.afterimg)
 
 if __name__ == "__main__":
     app.run(debug=True)
